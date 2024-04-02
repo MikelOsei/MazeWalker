@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: d05c6722148b8e649a96840374282297
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - potion: {fileID: 2105642623487264571, guid: 9bee0e66a5f223043acc5cb991f4fc0a,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

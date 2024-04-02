@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: f44fc9e9c6e1d744ebf751f99e392b20
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - port_potion: {fileID: 6190256070490013680, guid: d7baca43f39433f45ab35d316c679a57,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

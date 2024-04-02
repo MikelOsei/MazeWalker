@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: aff6325b49ea67543a5cc137cb56c505
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - potion_speed: {fileID: 2105642623487264571, guid: 9bee0e66a5f223043acc5cb991f4fc0a,
+      type: 3}
+  - potion_teleport: {fileID: 6190256070490013680, guid: d7baca43f39433f45ab35d316c679a57,
+      type: 3}
+  - potion_guide: {fileID: 2751614811219460517, guid: 876996bcbbffac14b8b3e88a2b2581fe,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
