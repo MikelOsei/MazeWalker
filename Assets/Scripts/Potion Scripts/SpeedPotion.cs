@@ -15,18 +15,8 @@ public class SpeedPotion : Potion {
     public override void ApplyEffects(PlayerLogic player) {
         player.speed *= 2;
         int maxSpeed = 4;
-        if (player.speed > maxSpeed) player.speed = maxSpeed;  
-        //speed_potion.SetActive(false);
+        if (player.speed > maxSpeed) player.speed = maxSpeed;
     }
-
-   /* public override void OnTriggerEnter(Collider other) {
-       // Debug.Log(getName() + " hit by " + other.tag);
-        if (other.CompareTag("Player")) {
-            GameObject p = other.gameObject;
-            PlayerLogic player = p.GetComponent<PlayerLogic>();
-            player.speed = 2;
-        }
-    }*/
 
     public override string getName() {
         return "speed";

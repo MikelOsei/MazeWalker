@@ -20,10 +20,18 @@ public class MazeCell : MonoBehaviour
     [SerializeField]
     private GameObject _unvisitedBlock;
 
+    [SerializeField]
+    private GameObject wispObject;
+
+    public List<MazeCell> neighbors; // list of "connected" cells
+
     public bool IsVisited { get; private set; }
+
+    public bool inPath {get; set;}
 
     public void Visit() {
         IsVisited = true;
+        wispObject.SetActive(false);
         _unvisitedBlock.SetActive(false);
     }
 
@@ -50,6 +58,17 @@ public class MazeCell : MonoBehaviour
 
     public void Close() {
         _unvisitedBlock.SetActive(true);
+    }
+
+    public void ActivateWisps() {
+        wispObject.SetActive(true);
+        ParticleSystem ps = wispObject.GetComponent<ParticleSystem>();
+        var wisps = ps.main;
+        ps.Play(true);
+    }
+
+    public void HideWisps() {
+        wispObject.SetActive(false);
     }
 
 

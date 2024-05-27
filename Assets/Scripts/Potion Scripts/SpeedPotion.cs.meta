@@ -4,6 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - ExplodeOnDestroy: {fileID: 4279950809624503374, guid: b796e872bd78fd342937eb478e5aa50c,
+      type: 3}
   - speed_potion: {fileID: 2105642623487264571, guid: 9bee0e66a5f223043acc5cb991f4fc0a,
       type: 3}
   executionOrder: 0

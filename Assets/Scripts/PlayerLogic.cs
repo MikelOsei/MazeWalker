@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.VisualScripting;
 using UnityEditorInternal;
-//using System.Numerics;
-//using System.Numerics;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerLogic : MonoBehaviour
@@ -50,22 +48,27 @@ public class PlayerLogic : MonoBehaviour
             Potion p = other.gameObject.GetComponent<Potion>();
             p.ApplyEffects(this);
 
-            
             if (ExplodeOnDestroy) {
-                ParticleSystem potionMagic = p.gameObject.GetComponent<ParticleSystem>();
-                var magic = potionMagic.main;
-                
-                Debug.Log("magic color: " + magic.startColor);
                 GameObject FX = Instantiate(ExplodeOnDestroy, p.gameObject.transform.position, Quaternion.identity);
-                ParticleSystem ps = FX.GetComponent<ParticleSystem>();
-                var explosion = ps.main;
-                var ex = ps.main.startColor;
-
-                ex = new ParticleSystem.MinMaxGradient(magic.startColor.gradient);
+                p.gameObject.transform.position = new Vector3(0, -1000, 0);
             }
 
-            Destroy(p.gameObject);
+            if (p.getName() != "speed") {
+                StartCoroutine(Delay(p.getName(), p.gameObject));
+            } else Destroy(p.gameObject);
+            
         } else return;
+    }
+
+    private IEnumerator Delay(string name, GameObject p) {
+        if (name == "guide") {
+            yield return new WaitForSeconds(21);
+            Destroy(p);
+            Debug.Log("Potion Destroyed from coroutine");
+        } else if (name == "teleport") {
+            yield return new WaitForSeconds(3);
+            Destroy(p);
+        } else Debug.Log($"Passed: {name}, not destroyed");
     }
 
     

@@ -107,7 +107,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -4936,6 +4936,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guide_potion: {fileID: 2751614811219460517}
+  _guideWisps: {fileID: 5681822624392464459, guid: c473960b8ab369342b0026317d6744b6,
+    type: 3}
 --- !u!1 &3268698686628026716
 GameObject:
   m_ObjectHideFlags: 0

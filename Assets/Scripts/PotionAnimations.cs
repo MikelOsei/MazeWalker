@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-//using System.Numerics;
 using UnityEngine;
 
 [RequireComponent(typeof(ParticleSystem))]
@@ -19,16 +16,12 @@ public class PotionAnimations : MonoBehaviour
     // Update is called once per frame
     void Update() {
         Vector3 pos = transform.position;
+        if (pos.y < -100) return;
         Quaternion rotation = transform.rotation;
-        pos.y = hover * Mathf.Cos(Time.time * hoverSpeed) + 0.55f;
+        pos.y = hover * Mathf.Cos(Time.time * hoverSpeed) + 0.5f;
         rotation.y = Mathf.Cos(Time.time * (hoverSpeed - 0.2f));
         transform.position = pos;
         transform.rotation = rotation;
     }
-
-    /*public void OnTriggerEnter(Collider other) {
-        Debug.Log("Potion hit by " + other.tag);
-        Destroy(potion);
-        //throw new NotImplementedException();
-    }*/
+ 
 }

@@ -19,9 +19,9 @@ public class GameInit : MonoBehaviour
 
         yield return new WaitForSeconds(5);
 
-      /*  // mainCamera.enabled = false;
-       // camTwo.enabled = true;
-        camTwo.transform.position = Vector3.Lerp(camTwo.transform.position, startPos, 5);*/
+        mainCamera.enabled = false;
+        camTwo.enabled = true;
+        camTwo.transform.position = Vector3.Lerp(camTwo.transform.position, startPos, 5);
         
     }
 
@@ -35,8 +35,8 @@ public class GameInit : MonoBehaviour
                 mainCamera.enabled = false;
                 camTwo.enabled = true;
             } else if (camTwo.enabled) {
-                mainCamera.enabled = true;
                 camTwo.enabled = false;
+                mainCamera.enabled = true;
             }
         }
         

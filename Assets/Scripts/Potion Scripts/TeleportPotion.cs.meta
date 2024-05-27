@@ -4,7 +4,11 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - ExplodeOnDestroy: {fileID: 4279950809624503374, guid: b796e872bd78fd342937eb478e5aa50c,
+      type: 3}
   - port_potion: {fileID: 6190256070490013680, guid: d7baca43f39433f45ab35d316c679a57,
+      type: 3}
+  - magicCircle: {fileID: 3744133877081091469, guid: a2a060732547fe64581bb0cb3c2bdf1d,
       type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
