@@ -11,19 +11,18 @@ public class MazeGenerator : MonoBehaviour
     private MazeCell _mazeCell;
 
     [SerializeField]
-    public int mazeWidth;
+    [Tooltip("Width of the maze to generate.")] public int mazeWidth;
 
     [SerializeField]
-    public int mazeDepth;
+    [Tooltip("Length of the maze to generate.")] public int mazeDepth;
 
     public MazeCell[,] mazeGrid;
 
     [SerializeField]
-    public GameObject[] Potions;
+    [Tooltip("Potion prefab(s) go here")] public GameObject[] Potions;
 
     private int maxPotions;
 
-    // Start is called before the first frame update
     public void Start() {
        mazeGrid = new MazeCell[mazeWidth, mazeDepth];
        maxPotions = mazeWidth * mazeDepth / 15;
@@ -36,7 +35,8 @@ public class MazeGenerator : MonoBehaviour
 
        for (int i = 0; i < mazeWidth; i++) {
         for (int j = 0; j < mazeDepth; j++) {
-            // DO NOT TOUCH OR YOU WILL BE FIRED - to avoid wall flickering from overlaps
+            
+            // random-offset to avoid walls flickering from overlaps
             var randomOffset = 0; // UnityEngine.Random.Range(0.002f, 0.006f);
             mazeGrid[i, j] = Instantiate(_mazeCell, new Vector3(i + randomOffset, 0, j + randomOffset), Quaternion.identity);
             // --------------------------------------------------------------------------------------------- //
@@ -62,7 +62,8 @@ public class MazeGenerator : MonoBehaviour
     }
 
 
-    private void GenerateMaze() {
+    //private void GenerateMaze() {
+    private IEnumerator GenerateMaze() {
        var randX = new System.Random();
        var randY = new System.Random();
 
@@ -95,6 +96,7 @@ public class MazeGenerator : MonoBehaviour
             // adds each cell to the other's neighbor list, will come in handy for solving the maze.
             currentCell.neighbors.Add(nextCell);
             nextCell.neighbors.Add(currentCell);
+            yield return WaitForSeconds(0.05f);
        }
 
     }
@@ -138,7 +140,7 @@ public class MazeGenerator : MonoBehaviour
         
         float maxoffset = 0.01f;
         if (prev.transform.position.x + maxoffset < curr.transform.position.x) {
-            // we went from right to left, so we clear right wall of prev, and left wall of curr
+            // we went from right to left, so we clear right wall of prev, and left wall of "curr"ent cell
             prev.ClearRightWall();
             curr.ClearLeftWall();
             return;
